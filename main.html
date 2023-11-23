@@ -1,0 +1,187 @@
+<div layout:fragment="content">
+  <div
+    class="s_top_txt"
+    style="
+      width: 1280px;
+      margin: 80px 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: inline-flex;
+    "
+  >
+    <div
+      style="
+        width: 250px;
+        height: 250px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.5);
+        "
+      ></div>
+      <div
+        style="
+          width: 85px;
+          height: 85px;
+          position: absolute;
+          border-radius: 50%;
+          background: #309cff;
+        "
+      ></div>
+    </div>
+    <div
+      style="
+        text-align: center;
+        color: #302f34;
+        font-size: 20px;
+        font-weight: 600;
+        word-wrap: break-word;
+      "
+    >
+      밀리 포인트 결제가 완료 되었습니다.
+    </div>
+    <div
+      style="
+        width: 40%;
+        margin-top: 30px;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 174px;
+        display: inline-flex;
+      "
+    >
+      <div
+        style="
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          display: inline-flex;
+        "
+      >
+        <div
+          style="
+            height: 50px;
+            color: #848484;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+          "
+        >
+          상품명
+        </div>
+        <div
+          style="
+            height: 50px;
+            color: #848484;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+          "
+        >
+          주문 번호
+        </div>
+        <div
+          style="
+            height: 50px;
+            color: #848484;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+          "
+        >
+          결제 금액
+        </div>
+      </div>
+      <div
+        style="
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          display: inline-flex;
+        "
+      >
+        <div
+          style="
+            text-align: right;
+            height: 50px;
+            color: #4a4a4c;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+          "
+          th:text="${orderName}"
+        ></div>
+        <div
+          style="
+            text-align: right;
+            height: 50px;
+            color: #4a4a4c;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+          "
+          th:text="${orderId}"
+        ></div>
+        <div
+          style="
+            text-align: right;
+            height: 50px;
+            color: #4a4a4c;
+            font-size: 16px;
+            font-weight: 400;
+            word-wrap: break-word;
+          "
+          th:text="${amount} + ' 원'"
+        ></div>
+      </div>
+    </div>
+
+    <a href="/payment" style="text-decoration: none; margin: 40px 0 -80px 0">
+      <button
+        style="
+          background-color: #fff;
+          border: 2px solid #309cff;
+          border-radius: 10px;
+          color: #309cff;
+          padding: 10px 80px;
+        "
+      >
+        <span style="font-size: 14px; font-weight: 800" th:text="'<'"></span>
+        <span style="font-size: 14px">돌아가기</span>
+      </button>
+    </a>
+  </div>
+
+  <style>
+    @media (max-width: 360px) {
+      .s_top_txt {
+        max-width: var(--m_width);
+        font-size: 20px !important;
+        margin: 10px auto 30px auto !important;
+      }
+
+      .sc_txt {
+        display: none;
+      }
+
+      .point_wrap {
+        max-width: var(--m_width);
+      }
+
+      .point_content {
+        display: flex;
+        row-gap: 20px;
+        flex-direction: column !important;
+      }
+    }
+  </style>
+</div>
